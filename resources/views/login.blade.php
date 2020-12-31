@@ -31,9 +31,18 @@
         <br>
         <br>
 
-        <input type="submit" value="Entrar">
+        @if($tries >= 3)
+            Você não pode tentar mais que 3 vezes
+        @else
+            <input type="submit" value="Entrar">
+        @endif
     </form>
 
+    <br>
+
+    Tentativas: {{ $tries }}
+
+    <br>
     <br>
 
     <a href="{{ route('register') }}">Não possui uma conta? Clique aqui para registrar</a>
